@@ -1,5 +1,13 @@
 WEB-projekti ryhmä #11
 
 
-Käyttäjänimiä
+Käyttäjätunnukset
+
+Github:
+
 Ylipro = Tuukka Junttila
+mannisjanne = Janne Manninen
+
+Hancknplan:
+
+jannemanninen = Janne Manninen

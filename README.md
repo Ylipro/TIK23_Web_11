@@ -8,6 +8,6 @@ Github:
 Ylipro = Tuukka Junttila
 mannisjanne = Janne Manninen
 
-Hancknplan:
+Hacknplan:
 
 jannemanninen = Janne Manninen

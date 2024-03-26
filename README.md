@@ -5,8 +5,7 @@ Käyttäjätunnukset
 
 Github:
 
-Ylipro = Tuukka Junttila
-mannisjanne = Janne Manninen
+Ylipro = Tuukka Junttila, mannisjanne = Janne Manninen
 
 Hacknplan:
 

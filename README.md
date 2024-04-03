@@ -7,10 +7,11 @@ Käyttäjätunnukset
 
 Github:
 
-Ylipro = Tuukka Junttila, mannisjanne = Janne Manninen, sapuska = Saga Puskala Anton0212 = Anton Pihlajaniemi, sahy = Samuel Hyvönen
+Ylipro = Tuukka Junttila, mannisjanne = Janne Manninen, sapuska = Saga Puskala Anton0212 = Anton Pihlajaniemi, sahy = Samuel Hyvönen, Jesseasd = Jesse Impiö
 
 Hacknplan:
 
 jannemanninen = Janne Manninen
 Anton1202 = Anton Pihlajaniemi
 sahy = Samuel Hyvönen
+Jesseasd = Jesse Impiö

@@ -1,13 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Äidinkieli</title>
-    <link rel="stylesheet" href="CSS/aidinkieli.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Äidinkieli</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="CSS/aidinkieli.css">
 </head>
+
 <body>
   <nav class="navbar bg-body-tertiary fixed-top">
     <div class="container-fluid">
@@ -15,7 +20,8 @@
         <img src="Images/Logo1.svg" alt="Logo" width="30" height="24" class="d-inline-block align-text-top">
         Aivopelit
       </a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+      <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
+        aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
@@ -32,25 +38,25 @@
               <a class="nav-link" href="./info.html">Info</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="./kooste.html">Kooste</a>
+              <a class="nav-link" href="./kooste.html">Kooste</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="./biologia.html">Biologia</a>
+              <a class="nav-link" href="./biologia.html">Biologia</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="./englanti.html">Englanti</a>
+              <a class="nav-link" href="./englanti.html">Englanti</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="./historia.html">Historia</a>
+              <a class="nav-link" href="./historia.html">Historia</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="./maantieto.html">Maantieto</a>
+              <a class="nav-link" href="./maantieto.html">Maantieto</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="./matematiikka.html">Matematiikka</a>
+              <a class="nav-link" href="./matematiikka.html">Matematiikka</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="./aidinkieli.html">Äidinkieli</a>
+              <a class="nav-link" href="./aidinkieli.html">Äidinkieli</a>
             </li>
           </ul>
         </div>
@@ -60,10 +66,127 @@
 
   <!--Nav päättyy-->
 
-  
-<script src="JS/aidinkieli.js"></script>
+  <div class="container">
+    Kysymys 1.
+    <hr>
+    Mikä on sanan "koira" taivutus muodossa nominatiivi?<br>
+    <input type="radio" name="question1" id="correct1">Koira<br>
+    <input type="radio" name="question1">Koiran<br>
+    <input type="radio" name="question1">Koiraa<br>
+    <input type="radio" name="question1">Koiralla<br>
+    <button class="next btn btn-primary" onclick="next(1)">Seuraava kysymys</button>
+  </div>
+
+  <div class="container">
+    Kysymys 2.
+    <hr>
+    Mikä on sanan "koira" taivutus muodossa partitiivi?<br>
+    <input type="radio" name="question2">Koira<br>
+    <input type="radio" name="question2">Koiran<br>
+    <input type="radio" name="question2" id="correct2">Koiraa<br>
+    <input type="radio" name="question2">Koiralla<br>
+    <button class="next btn btn-primary" onclick="next(2)">Seuraava kysymys</button>
+  </div>
+
+  <div class="container">
+    Kysymys 3.
+    <hr>
+    Mikä on sanan "juosta" tunnistus?<br>
+    <input type="radio" name="question3">Substantiivi<br>
+    <input type="radio" name="question3">Adjektiivi<br>
+    <input type="radio" name="question3" id="correct3">Verbi<br>
+    <input type="radio" name="question3">Partisiippi<br>
+    <button class="next btn btn-primary" onclick="next(3)">Seuraava kysymys</button>
+  </div>
+
+  <div class="container">
+    Kysymys 4.
+    <hr>
+    Mikä on komparatiivimuoto adjektiiville "nopea"?<br>
+    <input type="radio" name="question4">Nopein<br>
+    <input type="radio" name="question4" id="correct4">Nopeampi<br>
+    <input type="radio" name="question4">Nohevampi<br>
+    <input type="radio" name="question4">Nopeesti<br>
+    <button class="next btn btn-primary" onclick="next(4)">Seuraava kysymys</button>
+  </div>
+
+  <div class="container">
+    Kysymys 5.
+    <hr>
+    Täydennä lause oikealla verbinmuodolla: "Minä _____ (juosta) joka ilta."<br>
+    <input type="radio" name="question5">Juokse<br>
+    <input type="radio" name="question5">Juostaan<br>
+    <input type="radio" name="question5" id="correct5">Juoksen<br>
+    <input type="radio" name="question5">Juoskaa<br>
+    <button class="next btn btn-primary" onclick="next(5)">Seuraava kysymys</button>
+  </div>
+
+  <div class="container">
+    Kysymys 6.
+    <hr>
+    Missä sijamuodossa sana "koulussa" esiintyy seuraavassa lauseessa: "Olen koulussa."<br>
+    <input type="radio" name="question6">Inessiivissä<br>
+    <input type="radio" name="question6" id="correct6">Adessiivissa<br>
+    <input type="radio" name="question6">Ablatiivissa<br>
+    <input type="radio" name="question6">Essiivissä<br>
+    <button class="next btn btn-primary" onclick="next(6)">Seuraava kysymys</button>
+  </div>
+
+  <div class="container">
+    Kysymys 7.
+    <hr>
+    Taivuta sana "kissa" genetiivissä.<br>
+    <input type="radio" name="question7" id="correct7">Kissan<br>
+    <input type="radio" name="question7">Kissalla<br>
+    <input type="radio" name="question7">Kissassa<br>
+    <input type="radio" name="question7">Kissaan<br>
+    <button class="next btn btn-primary" onclick="next(7)">Seuraava kysymys</button>
+  </div>
+
+  <div class="container">
+    Kysymys 8.
+    <hr>
+    Muodosta adverbi adjektiivista "ystävällinen"<br>
+    <input type="radio" name="question8">Ystävälliseen<br>
+    <input type="radio" name="question8" id="correct8">Ystävällisesti<br>
+    <input type="radio" name="question8">Ystävällistä<br>
+    <input type="radio" name="question8">Ystävälliseksi<br>
+    <button class="next btn btn-primary" onclick="next(8)">Seuraava kysymys</button>
+  </div>
+
+  <div class="container">
+    Kysymys 9.
+    <hr>
+    Muodosta kysymys lauseesta: "Hän syö mansikoita."<br>
+    <input type="radio" name="question9" id="correct9">Syökö hän mansikoita?<br>
+    <input type="radio" name="question9">Syökö mansikoita hän?<br>
+    <input type="radio" name="question9">Hän syö mansikoita?<br>
+    <input type="radio" name="question9">Mansikoita syö hän?<br>
+    <button class="next btn btn-primary" onclick="next(9)">Seuraava kysymys</button>
+  </div>
+
+  <div class="container">
+    Kysymys 10.
+    <hr>
+    Mikä on sanan 'nukkua' tunnistus?<br>
+    <input type="radio" name="question10">Substantiivi<br>
+    <input type="radio" name="question10">Adjektiivi<br>
+    <input type="radio" name="question10" id="correct10">Verbi<br>
+    <input type="radio" name="question10">Partisiippi<br>
+    <button onclick="result(), next(10)" class="btn btn-primary">Lähetä vastaukset</button>
+  </div>
+<!--Kysymykset ylhääl. Piste kooste alhaal-->
+
+  <div class="container">
+    <h1 id="pisteet"></h1><hr>
+    <a href="index.html" class="btn btn-primary">Kotisivulle</a>
+    <a href="aidinkieli.html" class="btn btn-primary">Pelaa uudestaan</a>
+  </div>
+
+  <script src="JS/aidinkieli.js"></script>
 
 </body>
+
 </html>
 
 

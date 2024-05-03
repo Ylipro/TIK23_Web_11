@@ -1,6 +1,7 @@
 .container{
-    border: 3px solid black;
+    border: 3px solid #b0b96b;
     border-radius: 10px;
+    background-color: #E2EE8C;
     width: 60%;
     padding: 20px;
     display: none;
@@ -11,4 +12,5 @@
 }
 button{
     margin-top: 10px;
+    
 }

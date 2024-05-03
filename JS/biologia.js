@@ -1,3 +1,4 @@
+// Pelin kysymykset
 const questions = [
     {
         question: "Mikä on kasvin tärkein energianlähde?",
@@ -54,6 +55,11 @@ const questions = [
 let currentQuestion = 0;
 let score = 0;
 
+// Tallentaa oikeiden vastausten pisteet sessionStorageen
+function savePoints() {
+    sessionStorage.setItem("Biologia", score + "/10");
+}
+
 const questionElement = document.getElementById('question');
 const optionsElement = document.getElementById('options');
 const resultElement = document.getElementById('result');
@@ -65,7 +71,7 @@ const homeButton = document.getElementById('homeBtn');
 restartButton.addEventListener('click', () => {
     restartGame();
 });
-
+// Näyttää pisteet pelin lopussa ja painikkeet pelaa uudelleen, mene kotivisulle
 function restartGame() {
     currentQuestion = 0;
     score = 0;
@@ -76,7 +82,7 @@ function restartGame() {
     homeButton.style.display = 'none';
     loadQuestion();
 }
-
+// Painike jolla päästään etusivulle
 homeButton.addEventListener('click', () => {
     window.location.href = "http://127.0.0.1:5500/index.html";
 });
@@ -95,7 +101,7 @@ function loadQuestion() {
     });
     updateProgressBar();
 }
-
+// Arpoo kysymyksien järjestyksen
 function shuffleArray(array) {
     for (let i = array.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));
@@ -103,7 +109,7 @@ function shuffleArray(array) {
     }
     return array;
 }
-
+// Näyttää onko vastaus oikein vai väärin
 function checkAnswer(selectedOption, optionButton) {
     const correctAnswer = questions[currentQuestion].answer;
     if (selectedOption === correctAnswer) {
@@ -126,24 +132,25 @@ function checkAnswer(selectedOption, optionButton) {
         }, 1000);
     }
 }
-
+// Hakee html option nimiset elementit ja asettaa disabled arvon trueksi
 function disableOptions() {
     const optionButtons = document.querySelectorAll('.option');
     optionButtons.forEach(button => {
         button.disabled = true;
     });
 }
-
+// Näyttää pelistä saadut pisteet
 function showScore() {
     questionElement.textContent = '';
     optionsElement.innerHTML = '';
     resultElement.textContent = '';
-    scoreElement.textContent = "Peli päättyi. Sait " + score + " / " + questions.length + " oikeaa vastausta.";
+    scoreElement.textContent = "Peli päättyi. Sait " + score + " / 10 oikeaa vastausta.";
     progressBar.style.display = 'none';
     restartButton.style.display = 'block';
     homeButton.style.display = 'block';
+    savePoints();
 }
-
+// Päivittää pelin etenemisen palkkia
 function updateProgressBar() {
     const progressPercentage = ((currentQuestion + 1) / questions.length) * 100;
     progressBar.innerHTML = `<div style="width: ${progressPercentage}%;"></div>`;

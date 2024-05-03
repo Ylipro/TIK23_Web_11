@@ -4,8 +4,499 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Matikka</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="./JS/matematiikka.js" defer></script>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="./CSS/matematiikka.css">
 </head>
 <body>
-    Matematiikka
+    <nav class="navbar bg-body-tertiary fixed-top">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="index.html">
+            <img src="Images/Logo1.svg" alt="Logo" width="30" height="24" class="d-inline-block align-text-top">
+            Aivopelit
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+            <div class="offcanvas-header">
+                <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Aivopelit</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+                <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="./index.html">Kotisivu</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="./info.html">Info</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="./kooste.html">Kooste</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="./biologia.html">Biologia</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="./englanti.html">Englanti</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="./historia.html">Historia</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="./maantieto.html">Maantieto</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="./matematiikka.html">Matematiikka</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="./aidinkieli.html">Äidinkieli</a>
+                </li>
+                </ul>
+            </div>
+            </div>
+        </div>
+    </nav>
+
+<!--Navi loppuu-->
+
+    <div class="container">
+
+        <div class="row gx-0">
+
+            <div class="col-12 col-md-6 col-xl-4">
+
+                <div class="card border-bottom-0 align-items-center keskiarvo" onclick="keskiarvo()">
+                    
+                    <svg class="keskiarvoSvg" width="200" height="200" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <g clip-path="url(#clip0_1_83)">
+                            <mask id="mask0_1_83" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="0" y="0" width="200" height="200">
+                                <path d="M200 0H0V200H200V0Z" fill="white"/>
+                            </mask>
+                            <g mask="url(#mask0_1_83)">
+                                <path d="M100 0C103.395 53.7596 146.24 96.6052 200 100C146.24 103.395 103.395 146.24 100 200C96.6052 146.24 53.7596 103.395 0 100C53.7596 96.6052 96.6052 53.7596 100 0Z" fill="url(#paint0_linear_1_83)"/>
+                            </g>
+                        </g>
+                        <defs>
+                            <linearGradient id="paint0_linear_1_83" x1="150.5" y1="48.5" x2="48.5" y2="164" gradientUnits="userSpaceOnUse">
+                                <stop stop-color="#FFCC70"/>
+                                <stop offset="0.5" stop-color="#C850C0"/>
+                                <stop offset="1" stop-color="#4158D0"/>
+                            </linearGradient>
+                            <clipPath id="clip0_1_83">
+                                <rect width="200" height="200" fill="white"/>
+                            </clipPath>
+                        </defs>
+                    </svg>
+
+                    <img class="keskiarvoCorrect correct" src="./Images/correct.svg" alt="Correct answer" style="display: none">
+                    <img class="keskiarvoWrong wrong" src="./Images/wrong.svg" alt="Wrong answer" style="display: none">
+
+                    <div class="card-body">
+                        <h5 class="card-title text-center fs-3">Keskiarvo</h5>
+                    </div>
+                    
+                </div>
+                
+            </div>
+
+            <div class="col-12 col-md-6 col-xl-4">
+
+                <div class="card align-items-center desimYht" onclick="desimYht()">
+                    
+                    <svg class="desimYhtSvg" width="200" height="200" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M100 173.738C24.3642 236.944 -36.9438 175.636 26.2622 100C-36.9438 24.3642 24.3642 -36.9438 100 26.2622C175.621 -36.9438 236.944 24.3642 173.738 100C236.944 175.578 175.621 236.944 100 173.738Z" fill="url(#paint0_linear_1_90)"/>
+                        <defs>
+                            <linearGradient id="paint0_linear_1_90" x1="188" y1="9.00001" x2="13" y2="191" gradientUnits="userSpaceOnUse">
+                                <stop stop-color="#FFCC70"/>
+                                <stop offset="0.5" stop-color="#C850C0"/>
+                                <stop offset="1" stop-color="#4158D0"/>
+                            </linearGradient>
+                        </defs>
+                    </svg>
+
+                    <img class="desimYhtCorrect correct" src="./Images/correct.svg" alt="Correct answer" style="display: none">
+                    <img class="desimYhtWrong wrong" src="./Images/wrong.svg" alt="Wrong answer" style="display: none">
+
+                    <div class="card-body">
+                        <h5 class="card-title text-center fs-3">Desimaalilukujen yhteenlasku</h5>
+                    </div>
+                    
+                </div>
+                
+            </div>
+            
+            <div class="col-12 col-md-6 col-xl-4">
+
+                <div class="card align-items-center prosentti" onclick="prosentti()">
+                    
+                    <svg class="prosenttiSvg" width="200" height="200" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <g clip-path="url(#clip0_1_63)">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M120 14.286C120 6.396 113.604 0 105.714 0H94.286C86.396 0 80 6.396 80 14.286V17.226C80 29.954 64.612 36.328 55.613 27.328L53.533 25.248C47.954 19.67 38.909 19.67 33.33 25.248L25.249 33.33C19.669 38.909 19.669 47.954 25.249 53.533L27.329 55.613C36.328 64.613 29.953 80 17.226 80H14.285C6.396 80 0 86.396 0 94.286V105.714C0 113.604 6.396 120 14.286 120H17.226C29.954 120 36.328 135.388 27.328 144.387L25.248 146.467C19.67 152.046 19.67 161.091 25.248 166.67L33.33 174.751C38.909 180.33 47.954 180.33 53.533 174.751L55.613 172.671C64.613 163.672 80 170.046 80 182.773V185.714C80 193.604 86.396 200 94.286 200H105.714C113.604 200 120 193.604 120 185.714V182.773C120 170.046 135.388 163.672 144.387 172.671L146.467 174.751C152.046 180.33 161.091 180.33 166.67 174.751L174.751 166.67C180.33 161.091 180.33 152.046 174.751 146.467L172.672 144.387C163.672 135.388 170.046 120 182.773 120H185.714C193.604 120 200 113.604 200 105.714V94.286C200 86.396 193.604 80 185.714 80H182.773C170.046 80 163.672 64.612 172.671 55.613L174.751 53.533C180.33 47.954 180.33 38.909 174.751 33.33L166.67 25.249C161.091 19.669 152.046 19.669 146.467 25.249L144.387 27.329C135.388 36.327 120 29.953 120 17.226V14.285V14.286Z" fill="url(#paint0_linear_1_63)"/>
+                        </g>
+                        <defs>
+                            <linearGradient id="paint0_linear_1_63" x1="175" y1="29" x2="28" y2="173" gradientUnits="userSpaceOnUse">
+                                <stop stop-color="#FFCC70"/>
+                                <stop offset="0.5" stop-color="#C850C0"/>
+                                <stop offset="1" stop-color="#4158D0"/>
+                            </linearGradient>
+                            <clipPath id="clip0_1_63">
+                                <rect width="200" height="200" fill="white"/>
+                            </clipPath>
+                        </defs>
+                    </svg>
+
+                    <img class="prosenttiCorrect correct" src="./Images/correct.svg" alt="Correct answer" style="display: none">
+                    <img class="prosenttiWrong wrong" src="./Images/wrong.svg" alt="Wrong answer" style="display: none">
+                        
+                    <div class="card-body">
+                        <h5 class="card-title text-center fs-3">Prosenttilasku</h5>
+                    </div>
+                    
+                </div>
+                
+            </div>
+
+            <div class="col-12 col-md-6 col-xl-4">
+
+                <div class="card align-items-center desimVah" onclick="desimVah()">
+
+                    <svg class="desimVahSvg" width="200" height="200" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <g clip-path="url(#clip0_1_61)">
+                            <path d="M127.14 200C99.994 200 99.994 167.423 72.849 167.423C41.605 167.423 0 158.386 0 127.133C0 99.989 32.568 99.989 32.568 72.845C32.568 41.613 41.605 0 72.86 0C100.006 0 100.006 32.577 127.151 32.577C158.384 32.577 200 41.614 200 72.867C200 100.012 167.421 100.012 167.421 127.156C167.409 158.444 158.384 200 127.14 200Z" fill="url(#paint0_linear_1_61)"/>
+                        </g>
+                        <defs>
+                            <linearGradient id="paint0_linear_1_61" x1="164.5" y1="33" x2="35.5" y2="169" gradientUnits="userSpaceOnUse">
+                                <stop stop-color="#FFCC70"/>
+                                <stop offset="0.5" stop-color="#C850C0"/>
+                                <stop offset="1" stop-color="#4158D0"/>
+                            </linearGradient>
+                            <clipPath id="clip0_1_61">
+                                <rect width="200" height="200" fill="white"/>
+                            </clipPath>
+                        </defs>
+                    </svg>
+
+                    <img class="desimVahCorrect correct" src="./Images/correct.svg" alt="Correct answer" style="display: none">
+                    <img class="desimVahWrong wrong" src="./Images/wrong.svg" alt="Wrong answer" style="display: none">
+
+                    <div class="card-body">
+                        <h5 class="card-title text-center fs-3">Desimaalilukujen vähennyslasku</h5>
+                    </div>
+                    
+                </div>
+                
+            </div>
+
+            <div class="col-12 col-md-6 col-xl-4">
+
+                <div class="card align-items-center pintaAla" onclick="pintaAla()">
+                    
+                    <svg class="pintaAlaSvg" width="200" height="200" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <g clip-path="url(#clip0_1_65)">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M112.548 87.452C121.709 83.532 135.093 81.061 150 81.061C177.614 81.061 200 89.541 200 100C200 110.46 177.614 118.939 150 118.939C135.093 118.939 121.709 116.468 112.548 112.548C116.468 121.709 118.939 135.093 118.939 150C118.939 177.614 110.46 200 100 200C89.54 200 81.06 177.614 81.06 150C81.06 135.093 83.532 121.709 87.452 112.548C78.292 116.468 64.908 118.939 50 118.939C22.386 118.939 0 110.46 0 100C0 89.54 22.386 81.06 50 81.06C64.907 81.06 78.291 83.532 87.452 87.452C83.532 78.292 81.061 64.908 81.061 50C81.061 22.386 89.541 0 100 0C110.46 0 118.939 22.386 118.939 50C118.939 64.907 116.468 78.291 112.548 87.452Z" fill="url(#paint0_linear_1_65)"/>
+                        </g>
+                        <defs>
+                            <linearGradient id="paint0_linear_1_65" x1="160.5" y1="28.5" x2="40.5" y2="167" gradientUnits="userSpaceOnUse">
+                                <stop stop-color="#FFCC70"/>
+                                <stop offset="0.5" stop-color="#C850C0"/>
+                                <stop offset="1" stop-color="#4158D0"/>
+                            </linearGradient>
+                            <clipPath id="clip0_1_65">
+                                <rect width="200" height="200" fill="white"/>
+                            </clipPath>
+                        </defs>
+                    </svg>
+
+                    <img class="pintaAlaCorrect correct" src="./Images/correct.svg" alt="Correct answer" style="display: none">
+                    <img class="pintaAlaWrong wrong" src="./Images/wrong.svg" alt="Wrong answer" style="display: none">
+
+                    <div class="card-body">
+                        <h5 class="card-title text-center fs-3">Pinta-ala</h5>
+                    </div>
+                    
+                </div>
+                
+            </div>
+            
+            <div class="col-12 col-md-6 col-xl-4">
+
+                <div class="card align-items-center desimKert" onclick="desimKert()">
+                    
+                    <svg class="desimKertSvg" width="200" height="200" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <g clip-path="url(#clip0_1_67)">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M107.143 4C107.143 2.93913 106.722 1.92172 105.971 1.17157C105.221 0.421427 104.204 0 103.143 0L96.857 0C95.7961 0 94.7787 0.421427 94.0286 1.17157C93.2784 1.92172 92.857 2.93913 92.857 4V42.675C92.857 47.071 86.795 48.25 85.148 44.173L70.661 8.315C70.4642 7.82789 70.1734 7.38432 69.8051 7.00962C69.4369 6.63492 68.9984 6.33644 68.5148 6.13121C68.0312 5.92599 67.5118 5.81805 66.9865 5.81355C66.4612 5.80905 65.9401 5.90809 65.453 6.105L59.625 8.459C58.6415 8.85647 57.8561 9.62834 57.4417 10.6048C57.0272 11.5813 57.0176 12.6824 57.415 13.666L72.861 51.895C74.493 55.935 69.404 59.303 66.323 56.222L37.17 27.067C36.7986 26.6955 36.3576 26.4009 35.8723 26.1999C35.387 25.9988 34.8668 25.8954 34.3415 25.8954C33.8162 25.8954 33.296 25.9988 32.8107 26.1999C32.3254 26.4009 31.8844 26.6955 31.513 27.067L27.068 31.512C26.6965 31.8834 26.4019 32.3244 26.2009 32.8097C25.9998 33.295 25.8964 33.8152 25.8964 34.3405C25.8964 34.8658 25.9998 35.386 26.2009 35.8713C26.4019 36.3566 26.6965 36.7976 27.068 37.169L53.248 63.349C56.374 66.475 52.869 71.613 48.819 69.843L14.89 55.02C13.918 54.5952 12.817 54.5739 11.8293 54.9607C10.8415 55.3476 10.0479 56.111 9.623 57.083L7.106 62.843C6.89568 63.3244 6.78223 63.8424 6.77213 64.3676C6.76203 64.8928 6.85547 65.4149 7.04714 65.904C7.2388 66.3931 7.52492 66.8396 7.88916 67.2181C8.2534 67.5966 8.68863 67.8997 9.17 68.11L48.266 85.192C52.238 86.927 50.999 92.857 46.664 92.857H4C2.93913 92.857 1.92172 93.2784 1.17157 94.0286C0.421427 94.7787 0 95.7961 0 96.857L0 103.143C0 104.204 0.421427 105.221 1.17157 105.971C1.92172 106.722 2.93913 107.143 4 107.143H46.664C50.998 107.143 52.237 113.073 48.266 114.808L9.17 131.89C8.68867 132.1 8.25346 132.403 7.88923 132.782C7.525 133.16 7.23888 133.606 7.04721 134.095C6.85554 134.584 6.76209 135.106 6.77217 135.632C6.78226 136.157 6.8957 136.675 7.106 137.156L9.623 142.916C9.8332 143.397 10.1362 143.833 10.5147 144.197C10.8932 144.561 11.3397 144.848 11.8289 145.039C12.318 145.231 12.8401 145.324 13.3653 145.314C13.8906 145.304 14.4087 145.19 14.89 144.98L48.818 130.157C52.868 128.387 56.373 133.525 53.248 136.651L27.067 162.831C26.6955 163.202 26.4009 163.643 26.1999 164.129C25.9988 164.614 25.8954 165.134 25.8954 165.66C25.8954 166.185 25.9988 166.705 26.1999 167.19C26.4009 167.676 26.6955 168.117 27.067 168.488L31.512 172.933C31.8834 173.304 32.3244 173.599 32.8097 173.8C33.295 174.001 33.8152 174.105 34.3405 174.105C34.8658 174.105 35.386 174.001 35.8713 173.8C36.3566 173.599 36.7976 173.304 37.169 172.933L66.323 143.778C69.405 140.697 74.493 144.065 72.861 148.105L57.415 186.334C57.0176 187.318 57.0272 188.419 57.4417 189.395C57.8561 190.372 58.6415 191.144 59.625 191.541L65.453 193.896C65.9401 194.093 66.4611 194.192 66.9864 194.187C67.5117 194.182 68.0309 194.074 68.5144 193.869C68.9979 193.664 69.4363 193.365 69.8044 192.99C70.1726 192.616 70.4633 192.172 70.66 191.685L85.148 155.827C86.795 151.75 92.858 152.929 92.858 157.325V196C92.858 197.061 93.2794 198.078 94.0296 198.828C94.7797 199.579 95.7971 200 96.858 200H103.143C104.204 200 105.221 199.579 105.971 198.828C106.722 198.078 107.143 197.061 107.143 196V157.325C107.143 152.929 113.205 151.75 114.852 155.827L129.339 191.685C129.736 192.669 130.508 193.454 131.485 193.869C132.462 194.284 133.563 194.293 134.547 193.896L140.375 191.541C141.359 191.144 142.144 190.372 142.558 189.395C142.973 188.419 142.982 187.318 142.585 186.334L127.14 148.105C125.507 144.065 130.595 140.697 133.677 143.778L162.831 172.933C163.202 173.304 163.643 173.599 164.129 173.8C164.614 174.001 165.134 174.105 165.66 174.105C166.185 174.105 166.705 174.001 167.19 173.8C167.676 173.599 168.117 173.304 168.488 172.933L172.933 168.488C173.304 168.117 173.599 167.676 173.8 167.19C174.001 166.705 174.105 166.185 174.105 165.66C174.105 165.134 174.001 164.614 173.8 164.129C173.599 163.643 173.304 163.202 172.933 162.831L146.752 136.651C143.627 133.525 147.132 128.387 151.182 130.157L185.11 144.98C185.591 145.19 186.109 145.304 186.635 145.314C187.16 145.324 187.682 145.231 188.171 145.039C188.66 144.848 189.107 144.561 189.485 144.197C189.864 143.833 190.167 143.397 190.377 142.916L192.894 137.156C193.318 136.184 193.339 135.083 192.952 134.096C192.565 133.108 191.802 132.315 190.83 131.89L151.734 114.808C147.763 113.073 149.001 107.143 153.336 107.143H196C197.061 107.143 198.078 106.722 198.828 105.971C199.579 105.221 200 104.204 200 103.143V96.857C200 95.7961 199.579 94.7787 198.828 94.0286C198.078 93.2784 197.061 92.857 196 92.857H153.336C149.001 92.857 147.762 86.927 151.734 85.192L190.83 68.11C191.311 67.8997 191.747 67.5966 192.111 67.2181C192.475 66.8396 192.761 66.3931 192.953 65.904C193.145 65.4149 193.238 64.8928 193.228 64.3676C193.218 63.8424 193.104 63.3244 192.894 62.843L190.377 57.083C189.952 56.111 189.158 55.3476 188.171 54.9607C187.183 54.5739 186.082 54.5952 185.11 55.02L151.182 69.843C147.132 71.613 143.627 66.475 146.752 63.349L172.933 37.169C173.304 36.7976 173.599 36.3566 173.8 35.8713C174.001 35.386 174.105 34.8658 174.105 34.3405C174.105 33.8152 174.001 33.295 173.8 32.8097C173.599 32.3244 173.304 31.8834 172.933 31.512L168.488 27.067C168.117 26.6955 167.676 26.4009 167.19 26.1999C166.705 25.9988 166.185 25.8954 165.66 25.8954C165.134 25.8954 164.614 25.9988 164.129 26.1999C163.643 26.4009 163.202 26.6955 162.831 27.067L133.677 56.222C130.595 59.302 125.507 55.935 127.14 51.895L142.585 13.666C142.982 12.6824 142.973 11.5813 142.558 10.6048C142.144 9.62834 141.359 8.85647 140.375 8.459L134.547 6.104C134.06 5.90709 133.539 5.80805 133.014 5.81255C132.488 5.81704 131.969 5.92499 131.485 6.13021C131.002 6.33544 130.563 6.63392 130.195 7.00862C129.827 7.38332 129.536 7.82689 129.339 8.314L114.852 44.174C113.205 48.25 107.143 47.071 107.143 42.674V4Z" fill="url(#paint0_linear_1_67)"/>
+                        </g>
+                        <defs>
+                            <linearGradient id="paint0_linear_1_67" x1="168.5" y1="31" x2="33" y2="170" gradientUnits="userSpaceOnUse">
+                                <stop stop-color="#FFCC70"/>
+                                <stop offset="0.5" stop-color="#C850C0"/>
+                                <stop offset="1" stop-color="#4158D0"/>
+                            </linearGradient>
+                            <clipPath id="clip0_1_67">
+                                <rect width="200" height="200" fill="white"/>
+                            </clipPath>
+                        </defs>
+                    </svg>
+
+                    <img class="desimKertCorrect correct" src="./Images/correct.svg" alt="Correct answer" style="display: none">
+                    <img class="desimKertWrong wrong" src="./Images/wrong.svg" alt="Wrong answer" style="display: none">
+                        
+                    <div class="card-body">
+                        <h5 class="card-title text-center fs-3">Desimaalilukujen kertolasku</h5>
+                    </div>
+                    
+                </div>
+                
+            </div>
+        
+        </div>
+
+    </div>
+
+    <div class="overlay"></div>
+
+    <div class="keskiarvoGameboard gameboard" style="display: none">
+        
+        <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" onclick="hideOverlay('keskiarvo')">
+            <path d="M7.3284 7.58965L7.44943 7.44945C7.89321 7.00567 8.58765 6.96534 9.077 7.32842L9.2172 7.44945L20 18.2317L30.7828 7.44945C31.271 6.9613 32.0623 6.9613 32.5505 7.44945C33.0386 7.9376 33.0386 8.72907 32.5505 9.21722L21.7683 20L32.5505 30.7828C32.9943 31.2265 33.0346 31.921 32.6715 32.4103L32.5505 32.5505C32.1068 32.9943 31.4123 33.0347 30.923 32.6715L30.7828 32.5505L20 21.7683L9.2172 32.5505C8.72905 33.0387 7.93758 33.0387 7.44943 32.5505C6.96128 32.0623 6.96128 31.271 7.44943 30.7828L18.2316 20L7.44943 9.21722C7.00565 8.77344 6.96531 8.079 7.3284 7.58965Z" fill="#CDCDCD"/>
+        </svg>
+
+        <div class="keskiarvoGameboard-content gameboard-content">
+
+            <h1 class="phrase"></h1>
+
+            <p class="calc"></p>
+
+            <div class="row btn-row">
+
+                <div class="col">
+                    <button class="btn keskiarvo-btn">button 1</button>
+                </div>
+
+                <div class="col">
+                    <button class="btn keskiarvo-btn">button 2</button>
+                </div>
+
+                <div class="col">
+                    <button class="btn keskiarvo-btn">button 3</button>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="desimYhtGameboard gameboard" style="display: none">
+        
+        <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" onclick="hideOverlay('desimYht')">
+            <path d="M7.3284 7.58965L7.44943 7.44945C7.89321 7.00567 8.58765 6.96534 9.077 7.32842L9.2172 7.44945L20 18.2317L30.7828 7.44945C31.271 6.9613 32.0623 6.9613 32.5505 7.44945C33.0386 7.9376 33.0386 8.72907 32.5505 9.21722L21.7683 20L32.5505 30.7828C32.9943 31.2265 33.0346 31.921 32.6715 32.4103L32.5505 32.5505C32.1068 32.9943 31.4123 33.0347 30.923 32.6715L30.7828 32.5505L20 21.7683L9.2172 32.5505C8.72905 33.0387 7.93758 33.0387 7.44943 32.5505C6.96128 32.0623 6.96128 31.271 7.44943 30.7828L18.2316 20L7.44943 9.21722C7.00565 8.77344 6.96531 8.079 7.3284 7.58965Z" fill="#CDCDCD"/>
+        </svg>
+
+        <div class="desimYhtGameboard-content gameboard-content">
+
+            <h1 class="phrase"></h1>
+
+            <p class="calc"></p>
+
+            <div class="row btn-row">
+
+                <div class="col">
+                    <button class="btn desimYht-btn">button 1</button>
+                </div>
+
+                <div class="col">
+                    <button class="btn desimYht-btn">button 2</button>
+                </div>
+
+                <div class="col">
+                    <button class="btn desimYht-btn">button 3</button>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="prosenttiGameboard gameboard" style="display: none">
+        
+        <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" onclick="hideOverlay('prosentti')">
+            <path d="M7.3284 7.58965L7.44943 7.44945C7.89321 7.00567 8.58765 6.96534 9.077 7.32842L9.2172 7.44945L20 18.2317L30.7828 7.44945C31.271 6.9613 32.0623 6.9613 32.5505 7.44945C33.0386 7.9376 33.0386 8.72907 32.5505 9.21722L21.7683 20L32.5505 30.7828C32.9943 31.2265 33.0346 31.921 32.6715 32.4103L32.5505 32.5505C32.1068 32.9943 31.4123 33.0347 30.923 32.6715L30.7828 32.5505L20 21.7683L9.2172 32.5505C8.72905 33.0387 7.93758 33.0387 7.44943 32.5505C6.96128 32.0623 6.96128 31.271 7.44943 30.7828L18.2316 20L7.44943 9.21722C7.00565 8.77344 6.96531 8.079 7.3284 7.58965Z" fill="#CDCDCD"/>
+        </svg>
+
+        <div class="prosenttiGameboard-content gameboard-content">
+
+            <h1 class="phrase"></h1>
+
+            <div class="row btn-row">
+
+                <div class="col">
+                    <button class="btn prosentti-btn">button 1</button>
+                </div>
+
+                <div class="col">
+                    <button class="btn prosentti-btn">button 2</button>
+                </div>
+
+                <div class="col">
+                    <button class="btn prosentti-btn">button 3</button>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="desimVahGameboard gameboard" style="display: none">
+        
+        <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" onclick="hideOverlay('desimVah')">
+            <path d="M7.3284 7.58965L7.44943 7.44945C7.89321 7.00567 8.58765 6.96534 9.077 7.32842L9.2172 7.44945L20 18.2317L30.7828 7.44945C31.271 6.9613 32.0623 6.9613 32.5505 7.44945C33.0386 7.9376 33.0386 8.72907 32.5505 9.21722L21.7683 20L32.5505 30.7828C32.9943 31.2265 33.0346 31.921 32.6715 32.4103L32.5505 32.5505C32.1068 32.9943 31.4123 33.0347 30.923 32.6715L30.7828 32.5505L20 21.7683L9.2172 32.5505C8.72905 33.0387 7.93758 33.0387 7.44943 32.5505C6.96128 32.0623 6.96128 31.271 7.44943 30.7828L18.2316 20L7.44943 9.21722C7.00565 8.77344 6.96531 8.079 7.3284 7.58965Z" fill="#CDCDCD"/>
+        </svg>
+
+        <div class="desimVahGameboard-content gameboard-content">
+
+            <h1 class="phrase"></h1>
+
+            <p class="calc"></p>
+
+            <div class="row btn-row">
+
+                <div class="col">
+                    <button class="btn desimVah-btn">button 1</button>
+                </div>
+
+                <div class="col">
+                    <button class="btn desimVah-btn">button 2</button>
+                </div>
+
+                <div class="col">
+                    <button class="btn desimVah-btn">button 3</button>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="pintaAlaGameboard gameboard" style="display: none">
+        
+        <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" onclick="hideOverlay('pintaAla')">
+            <path d="M7.3284 7.58965L7.44943 7.44945C7.89321 7.00567 8.58765 6.96534 9.077 7.32842L9.2172 7.44945L20 18.2317L30.7828 7.44945C31.271 6.9613 32.0623 6.9613 32.5505 7.44945C33.0386 7.9376 33.0386 8.72907 32.5505 9.21722L21.7683 20L32.5505 30.7828C32.9943 31.2265 33.0346 31.921 32.6715 32.4103L32.5505 32.5505C32.1068 32.9943 31.4123 33.0347 30.923 32.6715L30.7828 32.5505L20 21.7683L9.2172 32.5505C8.72905 33.0387 7.93758 33.0387 7.44943 32.5505C6.96128 32.0623 6.96128 31.271 7.44943 30.7828L18.2316 20L7.44943 9.21722C7.00565 8.77344 6.96531 8.079 7.3284 7.58965Z" fill="#CDCDCD"/>
+        </svg>
+
+        <div class="pintaAlaGameboard-content gameboard-content">
+
+            <h1 class="phrase"></h1>
+
+            <div class="calc">
+                
+                <div class="pintaAlaWrapper">
+
+                    <svg class="rectangle1 rectangle" width="250" height="100" viewBox="0 0 250 100" fill="none" xmlns="http://www.w3.org/2000/svg" style="display: none">
+                        <rect x="0.5" y="0.5" width="249" height="99" fill="url(#paint0_linear_36_2)" stroke="#CDCDCD"/>
+                        <defs>
+                            <linearGradient id="paint0_linear_36_2" x1="250" y1="9.31323e-06" x2="4.47035e-07" y2="100" gradientUnits="userSpaceOnUse">
+                                <stop stop-color="#FFCC70"/>
+                                <stop offset="0.5" stop-color="#C850C0"/>
+                                <stop offset="1" stop-color="#4158D0"/>
+                            </linearGradient>
+                        </defs>
+                    </svg>
+
+                    <svg class="rectangle2 rectangle" width="100" height="150" viewBox="0 0 100 150" fill="none" xmlns="http://www.w3.org/2000/svg" style="display: none">
+                        <rect x="0.5" y="0.5" width="99" height="149" fill="url(#paint0_linear_36_3)" stroke="#CDCDCD"/>
+                        <defs>
+                            <linearGradient id="paint0_linear_36_3" x1="100" y1="3.97364e-06" x2="-3.72529e-06" y2="150" gradientUnits="userSpaceOnUse">
+                                <stop stop-color="#FFCC70"/>
+                                <stop offset="0.5" stop-color="#C850C0"/>
+                                <stop offset="1" stop-color="#4158D0"/>
+                            </linearGradient>
+                        </defs>
+                    </svg>
+
+                    <p class="height"></p>
+                
+                </div>
+
+                <p class="width"></p>
+                    
+            </div>
+
+            <div class="row btn-row">
+
+                <div class="col">
+                    <button class="btn pintaAla-btn">button 1</button>
+                </div>
+
+                <div class="col">
+                    <button class="btn pintaAla-btn">button 2</button>
+                </div>
+
+                <div class="col">
+                    <button class="btn pintaAla-btn">button 3</button>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="desimKertGameboard gameboard" style="display: none">
+        
+        <svg class="desimKertSvg" width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" onclick="hideOverlay('desimKert')">
+            <path d="M7.3284 7.58965L7.44943 7.44945C7.89321 7.00567 8.58765 6.96534 9.077 7.32842L9.2172 7.44945L20 18.2317L30.7828 7.44945C31.271 6.9613 32.0623 6.9613 32.5505 7.44945C33.0386 7.9376 33.0386 8.72907 32.5505 9.21722L21.7683 20L32.5505 30.7828C32.9943 31.2265 33.0346 31.921 32.6715 32.4103L32.5505 32.5505C32.1068 32.9943 31.4123 33.0347 30.923 32.6715L30.7828 32.5505L20 21.7683L9.2172 32.5505C8.72905 33.0387 7.93758 33.0387 7.44943 32.5505C6.96128 32.0623 6.96128 31.271 7.44943 30.7828L18.2316 20L7.44943 9.21722C7.00565 8.77344 6.96531 8.079 7.3284 7.58965Z" fill="#CDCDCD"/>
+        </svg>
+
+        <div class="desimKertGameboard-content gameboard-content">
+
+            <h1 class="phrase"></h1>
+
+            <p class="calc"></p>
+
+            <div class="row btn-row">
+
+                <div class="col">
+                    <button class="btn desimKert-btn">button 1</button>
+                </div>
+
+                <div class="col">
+                    <button class="btn desimKert-btn">button 2</button>
+                </div>
+
+                <div class="col">
+                    <button class="btn desimKert-btn">button 3</button>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="returnToMainGameboard gameboard" style="display: none">
+
+        <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" onclick="hideOverlay('returnToMain')">
+            <path d="M7.3284 7.58965L7.44943 7.44945C7.89321 7.00567 8.58765 6.96534 9.077 7.32842L9.2172 7.44945L20 18.2317L30.7828 7.44945C31.271 6.9613 32.0623 6.9613 32.5505 7.44945C33.0386 7.9376 33.0386 8.72907 32.5505 9.21722L21.7683 20L32.5505 30.7828C32.9943 31.2265 33.0346 31.921 32.6715 32.4103L32.5505 32.5505C32.1068 32.9943 31.4123 33.0347 30.923 32.6715L30.7828 32.5505L20 21.7683L9.2172 32.5505C8.72905 33.0387 7.93758 33.0387 7.44943 32.5505C6.96128 32.0623 6.96128 31.271 7.44943 30.7828L18.2316 20L7.44943 9.21722C7.00565 8.77344 6.96531 8.079 7.3284 7.58965Z" fill="#CDCDCD"/>
+        </svg>
+
+        <div class="gameboard-content">
+
+            <h1 class="phrase">Vastasit kaikkiin kysymyksiin</h1>
+
+            <p class="points"></p>
+
+            <a class="btn returnToMain-btn" href="./index.html">Palaa etusivulle</a>
+
+        </div>
+
+    </div>
+
 </body>
 </html>

@@ -8,6 +8,7 @@ function next(id) {
 //Saadaan lopputulos
 function result() {
     var score = 0;
+    var maxPoints = 10;
     if (document.getElementById('correct1').checked) {
         score++;
     }
@@ -39,4 +40,5 @@ function result() {
         score++;
     }
     document.getElementById("pisteet").innerHTML = "Sait yhteensä "+score+"/10 pistettä!";
+    sessionStorage.setItem("Äidinkieli", score + "/" + maxPoints)
 }

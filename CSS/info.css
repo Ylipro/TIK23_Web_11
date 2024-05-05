@@ -1,6 +1,13 @@
-.container{
-    position: absolute;
-    top: 30%;
-    left: 50%;
-    transform: translate(-60%, -50%);
+main {
+    margin: 5em;
+    padding: 5em;
+    padding-bottom: 10em;
+    word-wrap: break-word;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    border-style: dotted;
+    border-width: 1em;
+}
+
+li {
+    padding: 0.2em;
 }

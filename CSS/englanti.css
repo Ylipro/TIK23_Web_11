@@ -1,0 +1,39 @@
+main {
+    padding-top: 4em;
+    padding-left: 2em;
+    padding-bottom: 10em;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color:rgb(241, 248, 254);
+}
+
+.h2top {
+    padding-bottom: 1em;
+    font-size: 1.5em;
+}
+
+.gameWindow {
+    margin: auto;
+    max-width: 40%;
+    padding: 2em;
+    background-color: rgb(232, 255, 215);
+    border-style: double;
+    border-width: 5px;
+    border-radius: 0.8em;
+    word-wrap: break-word;
+}
+
+#showSentence {
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+    font-weight: bolder;
+}
+
+.btnAction {
+    margin-top: 0.5em;
+    background-color: rgb(255, 255, 255);
+    border-radius: 0.5em;
+}
+
+#pointCounter {
+    font-weight: bolder;
+}

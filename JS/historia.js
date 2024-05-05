@@ -1,12 +1,7 @@
 
-
 document.addEventListener('DOMContentLoaded', function() {
     var nextButton = document.getElementById('next-button');
     nextButton.addEventListener('click', nextQuestion);
-
-    // Muu koodi tähän, esimerkiksi kysymysten määrittely ja näyttäminen
-
-
 
 var questions = [
     {
@@ -32,14 +27,14 @@ function displayQuestion() {
     var questionContainer = document.getElementById('question-container');
     var currentQuestion = questions[currentQuestionIndex];
 
-    questionContainer.innerHTML = ''; // Tyhjennä kysymysalue
+    questionContainer.innerHTML = '';
 
-    // Lisää kysymys
+   
     var questionElement = document.createElement('p');
     questionElement.textContent = currentQuestion.question;
     questionContainer.appendChild(questionElement);
 
-    // Lisää vastausvaihtoehdot
+ 
     currentQuestion.options.forEach(function(option) {
         var optionElement = document.createElement('button');
         optionElement.textContent = option;
@@ -67,13 +62,13 @@ function nextQuestion() {
         displayQuestion();
         document.getElementById('result').textContent = '';
     } else {
-        // Kaikki kysymykset käyty läpi
+       
         var questionContainer = document.getElementById('question-container');
         questionContainer.innerHTML = '<p>Kaikki kysymykset suoritettu!</p>';
         document.getElementById('result').textContent = '';
     }
 }
 
-// Alusta ensimmäinen kysymys
+
 displayQuestion();
 });

@@ -1,0 +1,66 @@
+body, html {
+    height: 100%;
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+p {
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+.content {
+    margin-top: 20px;
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start; 
+    max-width: 800px; 
+}
+
+.map {
+    width: 70%;
+    margin-bottom: 15em;
+}
+
+.list-container {
+    width: 20%;
+    height: 0%;
+    margin-top: 7em;
+    margin-left: 5em;
+}
+
+.form-group {
+    margin-bottom: 10px;
+    align-items: center;
+}
+
+input[type="text"], button {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+#answerForm {
+    padding-left: 40%;
+}
